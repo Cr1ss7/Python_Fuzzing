@@ -3,7 +3,7 @@ import requests
 def fuzzingSearchCommon(url):
     url = veriUrl(url)
     print("Realizando Fuzzing a -> "+url)
-    with open("big.txt", "r") as tf:
+    with open("dirb/big.txt", "r") as tf:
         lines = tf.read().split("\n")
 
     for line in lines:
@@ -15,7 +15,7 @@ def fuzzingSearchCommon(url):
 def fuzzingSearchDB(url):
     url = veriUrl(url)
     print("Realizando Fuzzing a -> "+url)
-    with open("sqli.auth.bypass.txt", "r") as tf:
+    with open("dirb/sqli.auth.bypass.txt", "r") as tf:
         lines = tf.read().split("\n")
 
     for line in lines:
