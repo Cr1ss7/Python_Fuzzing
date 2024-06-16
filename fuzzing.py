@@ -24,9 +24,21 @@ def fuzzingSearchDB(url):
         if resp.status_code == 200 or resp.status_code == 201 or resp.status_code == 202 or resp.status_code == 203:
             print(full_url+" -> EXISTENTE")
 
-def fuzzingSearhExt(url):
-    resp = requests.get(url)
-    print(resp)
+def fuzzingSelected(url, dirb):
+    url = veriUrl(url)
+    try:
+        with open(dirb, "r") as tf:
+            print("Realizando Fuzzing a -> "+url)
+            lines = tf.read().split("\n")
+    except:
+        print(f"Diccionario {dirb} no existente")
+        return
+
+    for line in lines:
+        full_url = url+"/"+line
+        resp = requests.get(full_url)
+        if resp.status_code == 200 or resp.status_code == 201 or resp.status_code == 202 or resp.status_code == 203:
+            print(full_url+" -> EXISTENTE")
 
 #Funcion para verificar url
 def veriUrl(url):
