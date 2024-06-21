@@ -18,8 +18,8 @@ try:
         case 1:
             fuzzing.fuzzingSearchCommon(url) 
         case 2:
-            print(f"{color.WARNING}Apartado en desarrollo...{color.ENDC}")
-            #fuzzing.fuzzingSearchDB(url)
+            #print(f"{color.WARNING}Apartado en desarrollo...{color.ENDC}")
+            fuzzing.fuzzingSearchDB(url)
         case 3:
             print(f"{color.OKGREEN}Digite la direccion de el diccionario a emplear{color.ENDC}")
             dirb = input()
